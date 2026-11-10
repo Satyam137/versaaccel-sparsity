@@ -1,0 +1,26 @@
+# Exact versions every number in PROJECT_REPORT.md (Rev 17) was produced with.
+# Python 3.11.4 (python.org build, macOS). R3.
+#
+# torch/torchvision: the results were produced on the nightly builds
+# torch 2.8.0.dev20250626 / torchvision 0.23.0.dev20250626, which pip cannot
+# reinstall by version; the 2.8.0 / 0.23.0 releases below are the nearest
+# installable pins. Everything reproduces to the printed digit across torch
+# versions EXCEPT section 8.1's maximum, which is torch-sensitive by ~0.2
+# points (+3.106% on 2.14, +2.920% on 2.8) -- quote it as "about 3%".
+#
+# transformers: 5.x changed the default attention implementation to SDPA,
+# which never forms the attention matrix; profile_bert.py forces
+# attn_implementation="eager". Do not relax this pin without re-checking
+# section 2.3's attention-sparsity range.
+numpy==2.1.3
+pandas==2.3.0
+torch==2.8.0
+torchvision==0.23.0        # >=0.18 needed for Imagenette (profile_resnet.py --download)
+transformers==5.17.0
+datasets==5.0.1            # sst2 via "nyu-mll/glue" (canonical id required by datasets>=3)
+openpyxl==3.1.5
+pillow==10.4.0
+
+# Not Python packages, but required:
+#   Icarus Verilog 13.0 (iverilog/vvp)  -- every RTL bench and experiments/*_rtl.py
+#   Cadence Genus 21.10                 -- syn/genus (synthesis only)

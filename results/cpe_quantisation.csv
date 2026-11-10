@@ -1,0 +1,2 @@
+float_ceiling_acc,int8_test_acc,majority_baseline,qat_val_acc,shifts,n_layers,worst_accumulator
+0.9982238605898124,0.9303619302949062,0.7039879356568365,0.9301608800888062,"[4, 7, 0]",149200,15123
