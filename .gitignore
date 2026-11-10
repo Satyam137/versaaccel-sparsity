@@ -10,3 +10,7 @@ results/pre_fix/
 # Hundreds of MB of third-party images -- regenerate, do not version.
 idea1_adaptaccel/profiling_data/_datasets/
 idea1_adaptaccel/predictor/trained_models/retrained/
+
+FIX_PLAN.md
+PROJECT_REPORT.md
+PROJECT_STORY.md
